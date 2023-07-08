@@ -1,4 +1,5 @@
 import 'package:expense_tracker/widgets/expenses.dart';
+// import 'package:flutter/services.dart'; // This package is required for the portrait up functionality.
 import 'package:flutter/material.dart';
 
 var kColorScheme = ColorScheme.fromSeed(
@@ -11,6 +12,13 @@ var kDarkColorScheme = ColorScheme.fromSeed(
 );
 
 void main() {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.portraitUp,
+  // ]).then((fn) {
+
+  // The above commented code ensures that the ui is locked in the portrait up mode.And even if we rotate our device to landscape mode, it still stays in the portrait up mode.
+
   runApp(
     MaterialApp(
       darkTheme: ThemeData.dark().copyWith(
@@ -59,4 +67,5 @@ void main() {
       home: const Expenses(),
     ),
   );
+  // });
 }
